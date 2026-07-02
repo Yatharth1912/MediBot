@@ -1,0 +1,186 @@
+{
+  "fever": {
+    "severity": 3,
+    "specialist": "General Physician",
+    "medicines": ["Paracetamol 500mg", "Crocin", "Dolo 650"],
+    "home_remedies": ["Drink warm water", "Cold compress on forehead", "Rest properly"],
+    "diet": "Light food like khichdi, soup, and lots of fluids. Avoid oily food.",
+    "precautions": "If fever exceeds 102°F or lasts more than 3 days, see a doctor immediately."
+  },
+  "headache": {
+    "severity": 2,
+    "specialist": "Neurologist",
+    "medicines": ["Paracetamol 500mg", "Saridon", "Disprin"],
+    "home_remedies": ["Rest in a dark quiet room", "Apply peppermint oil on temples", "Stay hydrated"],
+    "diet": "Avoid caffeine and processed food. Eat magnesium-rich foods like spinach and almonds.",
+    "precautions": "Sudden severe headache with vision changes requires immediate medical attention."
+  },
+  "chest pain": {
+    "severity": 5,
+    "specialist": "Cardiologist",
+    "medicines": ["DO NOT self-medicate", "Consult doctor immediately"],
+    "home_remedies": ["Sit upright and stay calm", "Loosen tight clothing"],
+    "diet": "N/A - Seek medical help first",
+    "precautions": "⚠️ Chest pain can be serious. Call 102 if pain spreads to arm/jaw or with breathing difficulty."
+  },
+  "cough": {
+    "severity": 2,
+    "specialist": "Pulmonologist",
+    "medicines": ["Benadryl Syrup", "Ascoril", "Honitus", "Cough lozenges"],
+    "home_remedies": ["Warm water with honey and ginger", "Steam inhalation", "Salt water gargle"],
+    "diet": "Warm soups, herbal tea, avoid cold drinks and ice cream.",
+    "precautions": "If cough persists beyond 2 weeks or has blood, consult a doctor."
+  },
+  "cold": {
+    "severity": 1,
+    "specialist": "General Physician",
+    "medicines": ["Cetirizine", "Sinarest", "D-Cold", "Vicks VapoRub"],
+    "home_remedies": ["Steam inhalation with eucalyptus oil", "Warm turmeric milk", "Ginger tea"],
+    "diet": "Warm fluids, chicken soup, vitamin C rich fruits like oranges.",
+    "precautions": "Rest well and avoid cold exposure. Usually resolves in 5-7 days."
+  },
+  "sore throat": {
+    "severity": 2,
+    "specialist": "ENT Specialist",
+    "medicines": ["Strepsils", "Vicks lozenges", "Betadine gargle"],
+    "home_remedies": ["Warm salt water gargle", "Honey with warm water", "Turmeric milk"],
+    "diet": "Warm liquids, soft foods, avoid spicy and cold items.",
+    "precautions": "If accompanied by high fever or difficulty swallowing, see a doctor."
+  },
+  "rash": {
+    "severity": 2,
+    "specialist": "Dermatologist",
+    "medicines": ["Calamine lotion", "Cetirizine", "Hydrocortisone cream (mild)"],
+    "home_remedies": ["Apply aloe vera gel", "Cold compress", "Oatmeal bath"],
+    "diet": "Avoid allergens, eat anti-inflammatory foods like turmeric and green vegetables.",
+    "precautions": "If rash spreads rapidly or has fever, consult dermatologist immediately."
+  },
+  "stomach pain": {
+    "severity": 3,
+    "specialist": "Gastroenterologist",
+    "medicines": ["Meftal Spas", "Cyclopam", "Digene", "ENO"],
+    "home_remedies": ["Ginger tea", "Warm water with ajwain", "Peppermint tea"],
+    "diet": "Bland food like rice, banana, toast. Avoid spicy and oily food.",
+    "precautions": "Severe or persistent pain needs medical attention."
+  },
+  "nausea": {
+    "severity": 2,
+    "specialist": "Gastroenterologist",
+    "medicines": ["Domstal", "Emeset", "Pudin Hara"],
+    "home_remedies": ["Ginger tea", "Lemon water", "Small frequent meals"],
+    "diet": "Dry crackers, bananas, rice. Avoid strong smells and fatty food.",
+    "precautions": "If accompanied by severe vomiting or dehydration, see a doctor."
+  },
+  "vomiting": {
+    "severity": 3,
+    "specialist": "Gastroenterologist",
+    "medicines": ["Emeset", "Domstal", "ORS solution"],
+    "home_remedies": ["Sip ginger tea slowly", "ORS to prevent dehydration", "Rest"],
+    "diet": "Clear fluids first, then bland foods. Avoid dairy and spicy food.",
+    "precautions": "Persistent vomiting can cause dehydration. Seek help if it continues over 24 hours."
+  },
+  "dizziness": {
+    "severity": 3,
+    "specialist": "General Physician",
+    "medicines": ["Vertin", "Stemetil (only if prescribed)"],
+    "home_remedies": ["Sit down immediately", "Drink water", "Deep breathing"],
+    "diet": "Iron-rich food, avoid skipping meals, stay hydrated.",
+    "precautions": "Frequent dizziness may indicate low BP or other issues. Consult doctor."
+  },
+  "breathing difficulty": {
+    "severity": 5,
+    "specialist": "Pulmonologist",
+    "medicines": ["DO NOT self-medicate", "Use inhaler if prescribed"],
+    "home_remedies": ["Sit upright", "Loosen tight clothing", "Try slow breathing"],
+    "diet": "N/A - Seek immediate medical help",
+    "precautions": "⚠️ This is serious. Call 102 or go to emergency immediately."
+  },
+  "back pain": {
+    "severity": 3,
+    "specialist": "Orthopedic",
+    "medicines": ["Volini gel", "Moov spray", "Combiflam"],
+    "home_remedies": ["Hot/cold compress", "Gentle stretching", "Good posture"],
+    "diet": "Calcium and vitamin D rich foods like milk, eggs, leafy greens.",
+    "precautions": "Persistent back pain or numbness in legs needs medical evaluation."
+  },
+  "joint pain": {
+    "severity": 3,
+    "specialist": "Orthopedic",
+    "medicines": ["Combiflam", "Volini gel", "Diclofenac (only if prescribed)"],
+    "home_remedies": ["Warm compress", "Turmeric milk", "Gentle exercise"],
+    "diet": "Omega-3 rich foods, avoid processed food, include ginger and garlic.",
+    "precautions": "Persistent joint swelling requires consultation with orthopedic."
+  },
+  "fatigue": {
+    "severity": 2,
+    "specialist": "General Physician",
+    "medicines": ["Multivitamin tablets", "Iron supplements (if deficient)"],
+    "home_remedies": ["Adequate sleep 7-8 hrs", "Regular exercise", "Meditation"],
+    "diet": "Balanced diet with proteins, iron, and B12. Avoid junk food.",
+    "precautions": "Chronic fatigue may indicate underlying condition. Get blood tests done."
+  },
+  "body ache": {
+    "severity": 2,
+    "specialist": "General Physician",
+    "medicines": ["Paracetamol", "Combiflam", "Volini gel"],
+    "home_remedies": ["Warm bath", "Rest", "Gentle massage"],
+    "diet": "Hydration, magnesium-rich foods like bananas and nuts.",
+    "precautions": "If accompanied by high fever, could be viral. Consult doctor."
+  },
+  "diarrhea": {
+    "severity": 3,
+    "specialist": "Gastroenterologist",
+    "medicines": ["ORS", "Eldoper", "Enterogermina", "Norflox-TZ (if prescribed)"],
+    "home_remedies": ["ORS or coconut water", "Rice water", "Bananas"],
+    "diet": "BRAT diet - Banana, Rice, Applesauce, Toast. Avoid dairy and spicy food.",
+    "precautions": "Watch for dehydration. If blood in stool or severe, see doctor immediately."
+  },
+  "acidity": {
+    "severity": 2,
+    "specialist": "Gastroenterologist",
+    "medicines": ["ENO", "Digene", "Pantop 40", "Gelusil"],
+    "home_remedies": ["Cold milk", "Coconut water", "Fennel seeds after meals"],
+    "diet": "Avoid spicy, oily, and citrus foods. Eat small frequent meals.",
+    "precautions": "Chronic acidity needs medical evaluation for GERD."
+  },
+  "anxiety": {
+    "severity": 3,
+    "specialist": "Psychiatrist",
+    "medicines": ["Consult doctor - do not self-medicate"],
+    "home_remedies": ["Deep breathing exercises", "Meditation", "Regular exercise", "Journaling"],
+    "diet": "Avoid caffeine and alcohol. Include omega-3 and magnesium rich foods.",
+    "precautions": "If interfering with daily life, please consult a mental health professional."
+  },
+  "insomnia": {
+    "severity": 2,
+    "specialist": "Psychiatrist",
+    "medicines": ["Melatonin (consult doctor)", "Avoid sleeping pills without prescription"],
+    "home_remedies": ["Warm milk before bed", "No screens 1hr before sleep", "Meditation"],
+    "diet": "Avoid caffeine after 4 PM. Chamomile tea can help.",
+    "precautions": "Chronic insomnia affects health. Consult doctor if persists over 2 weeks."
+  },
+  "eye pain": {
+    "severity": 3,
+    "specialist": "Ophthalmologist",
+    "medicines": ["Refresh Tears (lubricating drops)", "Consult doctor for others"],
+    "home_remedies": ["Cold compress", "Reduce screen time", "20-20-20 rule"],
+    "diet": "Vitamin A rich foods like carrots, spinach, and eggs.",
+    "precautions": "Sudden vision changes or severe pain needs immediate ophthalmologist visit."
+  },
+  "ear pain": {
+    "severity": 3,
+    "specialist": "ENT Specialist",
+    "medicines": ["Paracetamol for pain", "Otek AC drops (if prescribed)"],
+    "home_remedies": ["Warm compress on ear", "Avoid water in ear"],
+    "diet": "Normal diet with immunity boosters like vitamin C.",
+    "precautions": "Do not insert anything in ear. See ENT if pain persists."
+  },
+  "tooth pain": {
+    "severity": 3,
+    "specialist": "Dentist",
+    "medicines": ["Paracetamol", "Ibuprofen", "Clove oil for temporary relief"],
+    "home_remedies": ["Salt water rinse", "Clove oil application", "Cold compress"],
+    "diet": "Soft foods, avoid very hot/cold/sweet items.",
+    "precautions": "See dentist ASAP. Ignoring can lead to serious infection."
+  }
+}

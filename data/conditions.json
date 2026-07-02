@@ -1,0 +1,18 @@
+{
+  "common cold": {
+    "symptoms": ["cough", "cold", "sore throat", "fever"],
+    "advice": "Rest, drink warm fluids, and take steam. Usually resolves in 5-7 days."
+  },
+  "migraine": {
+    "symptoms": ["headache", "nausea", "dizziness"],
+    "advice": "Rest in a dark room, stay hydrated. Consult a neurologist if frequent."
+  },
+  "gastritis": {
+    "symptoms": ["stomach pain", "acidity", "nausea"],
+    "advice": "Avoid spicy food, eat small meals, and consult a gastroenterologist."
+  },
+  "viral fever": {
+    "symptoms": ["fever", "body ache", "fatigue", "headache"],
+    "advice": "Rest, hydration, and paracetamol. See a doctor if fever persists over 3 days."
+  }
+}
