@@ -1,5 +1,5 @@
 import os
-import google.generativeai as genai
+from groq import Groq
 from dotenv import load_dotenv
 from datetime import datetime
 from chatbot.prompts import DOCTOR_SYSTEM_PROMPT
@@ -10,30 +10,28 @@ load_dotenv()
 
 class MediBot:
     def __init__(self):
-        # Configure Gemini
-        api_key = os.getenv('GEMINI_API_KEY')
+        # Configure Groq
+        api_key = os.getenv('GROQ_API_KEY')
         if not api_key:
-            raise ValueError("GEMINI_API_KEY not found in .env file!")
+            raise ValueError("GROQ_API_KEY not found in .env file!")
         
-        genai.configure(api_key=api_key)
+        # Initialize Groq client
+        self.client = Groq(api_key=api_key)
         
-        # Initialize model with system prompt
-        self.model = genai.GenerativeModel(
-            model_name='models/gemini-flash-latest',
-            system_instruction=DOCTOR_SYSTEM_PROMPT,
-            generation_config={
-                'temperature': 0.7,      # balanced creativity
-                'top_p': 0.9,
-                'max_output_tokens': 1024,
-            }
-        )
+        # Model configuration
+        self.model_name = "llama-3.3-70b-versatile"  # Best free model on Groq
+        self.temperature = 0.7
+        self.max_tokens = 1024
         
-        # Start chat session (maintains context)
-        self.chat = self.model.start_chat(history=[])
+        # Conversation history (Groq uses message list format)
+        self.messages = [
+            {"role": "system", "content": DOCTOR_SYSTEM_PROMPT}
+        ]
+        
         self.conversation_log = []
     
     def respond(self, user_input):
-        """Generate response using Gemini AI"""
+        """Generate response using Groq AI"""
         try:
             # Safety check first — emergency detection
             if is_emergency(user_input):
@@ -41,9 +39,21 @@ class MediBot:
                 self._log(user_input, emergency_msg)
                 return emergency_msg
             
-            # Send to Gemini with conversation history
-            response = self.chat.send_message(user_input)
-            reply = response.text
+            # Add user message to history
+            self.messages.append({"role": "user", "content": user_input})
+            
+            # Send to Groq with full conversation history
+            response = self.client.chat.completions.create(
+                model=self.model_name,
+                messages=self.messages,
+                temperature=self.temperature,
+                max_tokens=self.max_tokens,
+            )
+            
+            reply = response.choices[0].message.content
+            
+            # Add bot reply to history (maintains context)
+            self.messages.append({"role": "assistant", "content": reply})
             
             self._log(user_input, reply)
             return reply
@@ -62,5 +72,7 @@ class MediBot:
     
     def reset(self):
         """Reset conversation"""
-        self.chat = self.model.start_chat(history=[])
+        self.messages = [
+            {"role": "system", "content": DOCTOR_SYSTEM_PROMPT}
+        ]
         self.conversation_log = []
