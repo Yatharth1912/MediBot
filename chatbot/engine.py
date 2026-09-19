@@ -18,12 +18,17 @@ class MediBot:
         # Initialize Groq client
         self.client = Groq(api_key=api_key)
         
-        # Model configuration
-        self.model_name = "llama-3.3-70b-versatile"  # Best free model on Groq
+        # Models from your active list (Best to Fallback)
+        self.available_models = [
+            "openai/gpt-oss-120b",       # 1st Choice: Super Smart & Human-like
+            "qwen/qwen3.8-27b",          # 2nd Choice: Fast & Accurate
+            "openai/gpt-oss-20b"         # 3rd Choice: Backup
+        ]
+        
         self.temperature = 0.7
         self.max_tokens = 1024
         
-        # Conversation history (Groq uses message list format)
+        # Conversation history
         self.messages = [
             {"role": "system", "content": DOCTOR_SYSTEM_PROMPT}
         ]
@@ -42,17 +47,28 @@ class MediBot:
             # Add user message to history
             self.messages.append({"role": "user", "content": user_input})
             
-            # Send to Groq with full conversation history
-            response = self.client.chat.completions.create(
-                model=self.model_name,
-                messages=self.messages,
-                temperature=self.temperature,
-                max_tokens=self.max_tokens,
-            )
+            reply = None
+            last_error = None
             
-            reply = response.choices[0].message.content
+            # Try active models in order
+            for model_name in self.available_models:
+                try:
+                    response = self.client.chat.completions.create(
+                        model=model_name,
+                        messages=self.messages,
+                        temperature=self.temperature,
+                        max_tokens=self.max_tokens,
+                    )
+                    reply = response.choices[0].message.content
+                    break  # Success! Loop stop
+                except Exception as err:
+                    last_error = err
+                    continue  # Try next model if current fails
             
-            # Add bot reply to history (maintains context)
+            if reply is None:
+                raise last_error
+            
+            # Add bot reply to history
             self.messages.append({"role": "assistant", "content": reply})
             
             self._log(user_input, reply)
